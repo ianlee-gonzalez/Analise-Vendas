@@ -1,0 +1,4 @@
+Data,Produto,Categoria,Quantidade,Preco_Unitario,Custo_Unitario,Receita_Total,Lucro_Total
+2024-12-01,Produto A,Papelaria,10,20.0,15.0,200.0,50.0
+2024-12-01,Produto B,Informática,5,50.0,40.0,250.0,50.0
+...

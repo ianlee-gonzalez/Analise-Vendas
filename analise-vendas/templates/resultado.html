@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Análise de Vendas</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Resultados da Análise de Vendas</h1>
+
+        <p><strong>Total de Vendas:</strong> R${{ total_vendas }}</p>
+        <p><strong>Total de Lucro:</strong> R${{ total_lucro }}</p>
+
+        <h2>Resumo por Categoria</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Receita Total</th>
+                    <th>Lucro Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in resumo_categorias %}
+                    <tr>
+                        <td>{{ item.Categoria }}</td>
+                        <td>R${{ item.Receita_Total }}</td>
+                        <td>R${{ item.Lucro_Total }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Tabela Completa de Vendas</h2>
+        <div>
+            {{ tabela|safe }}
+        </div>
+
+        <a href="{{ url_for('download') }}" class="btn btn-primary mt-3">Baixar Arquivo Atualizado (CSV)</a>
+    </div>
+</body>
+</html>
