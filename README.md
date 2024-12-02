@@ -25,3 +25,22 @@ Este é um projeto que permite a análise de vendas através do upload de arquiv
    ```bash
    git clone https://github.com/ianlee-gonzalez/analise-vendas.git
    cd analise-vendas
+## Estrutura do Arquivo CSV
+
+O arquivo CSV enviado pelo usuário deve conter as seguintes colunas obrigatórias:
+
+| **Coluna**         | **Descrição**                                         |
+|---------------------|-------------------------------------------------------|
+| **Data**           | Data da venda (formato livre).                        |
+| **Produto**        | Nome ou descrição do produto.                         |
+| **Categoria**      | Categoria do produto (ex.: Eletrônicos).              |
+| **Quantidade**     | Quantidade de itens vendidos.                         |
+| **Preco_Unitario** | Preço por unidade do produto.                         |
+| **Custo_Unitario** | Custo por unidade do produto.                         |
+
+### Colunas Adicionadas pelo Sistema
+
+Após o upload do arquivo, o sistema calculará e adicionará automaticamente as seguintes colunas:
+
+- **Receita_Total**: `Quantidade * Preco_Unitario`
+- **Lucro_Total**: `Quantidade * (Preco_Unitario - Custo_Unitario)`   
